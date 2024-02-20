@@ -1,7 +1,19 @@
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
+
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold">
-      Hello world!
-    </h1>
-  )
+    <>
+      <Header />
+      <Footer />
+    </>
+  );
 }
+
+/*
+-app
+-header
+-main
+--card
+-footer
+*/
