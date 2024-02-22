@@ -1,8 +1,8 @@
-export default function Card( {image , text} ){
-  return(
-    <div className="card">
-      <img src={image} alt="" />
-      <div>{text}</div>
-    </div>
-  )
+export default function Card({ image , text , onSelect}) {
+  return (
+    <button className="card flex flex-col items-center" onClick={onSelect}>
+      <img src={image} alt="" className="image w-40"/>
+      {text}
+    </button>
+  );
 }
