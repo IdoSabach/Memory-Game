@@ -29,12 +29,13 @@ const cards = [
 ];
 
 export default function Main() {
+
   const handleSelect = (name) => {
     console.log(name)
   }
 
   return (
-    <div className="Main grid grid-cols-6 grid-rows-2 gap-4 p-2 justify-items-center m-8">
+    <div className="Main grid grid-cols-6 grid-rows-2 gap-y-8 p-2 justify-items-center m-8 bg-slate-200 p-12 rounded-xl">
       {cards.map((card, index) => {
         return <Card key={index} image={card.image} text={card.name} onSelect={() => handleSelect(card.name)}/>;
       })}
