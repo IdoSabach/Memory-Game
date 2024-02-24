@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
 
 import blackBlood from "../images/icons8-black-blood-96.png";
@@ -44,6 +44,15 @@ export default function Main() {
   const [selectedCards, setSelectedCards] = useState([]);
   const [bestScore , SetBestScore] = useState(0)
 
+  useEffect(() => {
+    if(selectedCards.length===12){
+      alert("You Won!");
+      setCurrScore(0);
+      setSelectedCards([]);
+      SetBestScore(12)
+    }
+  },[selectedCards])
+
   const handleSelect = (name) => {
     if(selectedCards.includes(name)){
       alert("You selected the same card twice. You are disqualified!");
@@ -59,6 +68,7 @@ export default function Main() {
       setCurrScore((prev) => prev + 1);
       setSelectedCards([...selectedCards, name]);
     }
+
     const shuffledCards = shuffleArray(cards);
     setCards(shuffledCards);
   };
