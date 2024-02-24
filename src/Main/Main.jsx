@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
+import Modal from "../Modal/Modal";
 
 import blackBlood from "../images/icons8-black-blood-96.png";
 import bmo from "../images/icons8-bmo-96.png";
@@ -43,21 +44,19 @@ export default function Main() {
   const [cards, setCards] = useState(initialCards);
   const [selectedCards, setSelectedCards] = useState([]);
   const [bestScore , SetBestScore] = useState(0)
+  const [isOpen , setIsOpen] = useState(false)
+  const [currText , setCurrText] = useState("You Lose")
 
   useEffect(() => {
     if(selectedCards.length===12){
-      alert("You Won!");
-      setCurrScore(0);
-      setSelectedCards([]);
-      SetBestScore(12)
+      setIsOpen(true)
+      setCurrText("You Won!")
     }
   },[selectedCards])
 
   const handleSelect = (name) => {
     if(selectedCards.includes(name)){
-      alert("You selected the same card twice. You are disqualified!");
-      setCurrScore(0);
-      setSelectedCards([]);
+      setIsOpen(true)
       if(currScore > bestScore){
         SetBestScore(currScore)
       }else{
@@ -72,6 +71,13 @@ export default function Main() {
     const shuffledCards = shuffleArray(cards);
     setCards(shuffledCards);
   };
+
+  const handleSetClose = () =>{
+    setIsOpen(false)
+    setCurrScore(0);
+    setSelectedCards([]);
+    setCurrText("You Lose!")
+  }
 
   return (
     <div className="main p-2 justify-items-center m-8 bg-blue-100 p-12 rounded-xl">
@@ -89,6 +95,7 @@ export default function Main() {
           />
         ))}
       </div>
+      <Modal handleClose={handleSetClose} currScore={currScore} open={isOpen} text={currText}/>
     </div>
   );
 }
