@@ -20,7 +20,7 @@ const initialCards = [
   { image: bmo, name: "Bmo" },
   { image: finn, name: "Finn" },
   { image: gunter, name: "Gunter" },
-  { image: hammerstein, name: "HammerStein" },
+  { image: hammerstein, name: "HammerS" },
   { image: iceKing, name: "Ice King" },
   { image: jake, name: "Jake" },
   { image: pineapples, name: "PineApple" },
@@ -80,12 +80,12 @@ export default function Main() {
   }
 
   return (
-    <div className="main p-2 justify-items-center m-8 bg-blue-100 p-12 rounded-xl">
+    <div className="main p-1 justify-items-center mr-2 ml-2 mt-8 mb-8 bg-blue-100 p-12 rounded-xl">
       <header className="head flex pt-5 justify-around text-xl font-bold bg-blue-100">
         <div className="curr bg-blue-100">Curr Score: {currScore} </div>
         <div className="best bg-blue-100">Best Score: {bestScore} </div>
       </header>
-      <div className="mainCards grid grid-cols-6 grid-rows-2 gap-y-4 p-2 justify-items-center m-8 bg-blue-100 p-12 rounded-xl">
+      <div className="mainCards grid lg:grid-cols-6 lg:grid-rows-2 grid-cols-3 grid-rows-3 gap-y-2 p-1 justify-items-center  bg-blue-100 rounded-xl">
         {cards.map((card, index) => (
           <Card
             key={index}
