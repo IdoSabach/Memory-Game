@@ -51,6 +51,7 @@ export default function Main() {
     if(selectedCards.length===12){
       setIsOpen(true)
       setCurrText("You Won!")
+      SetBestScore(12)
     }
   },[selectedCards])
 
