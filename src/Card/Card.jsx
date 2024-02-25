@@ -18,12 +18,12 @@ export default function Card({ image, text, onSelect }) {
 
   return (
     <button
-      className="card relative flex flex-col items-center bg-blue-400 rounded-xl p-1 font-bold text-white shadow-xl m-2 bg-transparent"
+      className="card relative flex flex-col items-center rounded-xl p-1 font-bold text-white shadow-xl m-2 bg-transparent"
       onClick={onSelect}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <img src={image} alt="" className="image w-36 rounded-xl bg-blue-400 bg-transparent" />
+      <img src={image} alt="" className="image w-36 rounded-xl bg-transparent" />
       {text}
     </button>
   );
