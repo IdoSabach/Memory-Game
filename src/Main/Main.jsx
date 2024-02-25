@@ -84,7 +84,7 @@ export default function Main() {
   return (
     <div className="main p-1 justify-items-center mr-2 ml-2 mt-8 mb-8 p-5 rounded-xl lg:m-24 bg-transparent border border-black backdrop-blur-lg bg-opacity-50 inset-0">
       <header className="head flex justify-around text-xl font-bold mt-4 mb-4 bg-transparent">
-        <div className="curr bg-transparent">Current Score: {currScore} </div>
+        <div className="curr bg-transparent">Current Score:{currScore} </div>
         <div className="best bg-transparent">Best Score: {bestScore} </div>
       </header>
       <div className="mainCards grid lg:grid-cols-6 lg:grid-rows-2 grid-cols-3 grid-rows-3 gap-y-2 justify-items-center  rounded-xl bg-transparent">

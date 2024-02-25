@@ -2,11 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: adventure;
+  src: url(../font/Adventure\ Time\ Logo.ttf);
+}
+
+@font-face {
+  font-family:adventure-tow ;
+  src: url(../font/Film\ Noir\ Adventure.ttf);
+}
+
 *{
   padding: 0;
   margin: 0;
   /* outline: 1px solid red; */
   background-color: #aec3e2;
+  font-family: adventure-tow;
   
 }
 
