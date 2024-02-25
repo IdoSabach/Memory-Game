@@ -15,6 +15,7 @@ import mek from "../images/icons8-mek-quake-96.png";
 import mongrol from "../images/icons8-mongrol-96.png";
 import princess from "../images/icons8-princess-bubblegum-96.png";
 
+
 const initialCards = [
   { image: blackBlood, name: "BloodB" },
   { image: bmo, name: "Bmo" },
@@ -45,7 +46,7 @@ export default function Main() {
   const [selectedCards, setSelectedCards] = useState([]);
   const [bestScore , SetBestScore] = useState(0)
   const [isOpen , setIsOpen] = useState(false)
-  const [currText , setCurrText] = useState("You Lose")
+  const [currText , setCurrText] = useState("You Lost!")
 
   useEffect(() => {
     if(selectedCards.length===12){
@@ -81,12 +82,12 @@ export default function Main() {
   }
 
   return (
-    <div className="main p-1 justify-items-center mr-2 ml-2 mt-8 mb-8 bg-blue-100 p-5 rounded-xl lg:m-24">
-      <header className="head flex justify-around text-xl font-bold bg-blue-100 mt-4 mb-4">
-        <div className="curr bg-blue-100">Curr Score: {currScore} </div>
-        <div className="best bg-blue-100">Best Score: {bestScore} </div>
+    <div className="main p-1 justify-items-center mr-2 ml-2 mt-8 mb-8 p-5 rounded-xl lg:m-24 bg-transparent border border-black backdrop-blur-lg bg-opacity-50 inset-0">
+      <header className="head flex justify-around text-xl font-bold mt-4 mb-4 bg-transparent">
+        <div className="curr bg-transparent">Current Score: {currScore} </div>
+        <div className="best bg-transparent">Best Score: {bestScore} </div>
       </header>
-      <div className="mainCards grid lg:grid-cols-6 lg:grid-rows-2 grid-cols-3 grid-rows-3 gap-y-2 justify-items-center  bg-blue-100 rounded-xl">
+      <div className="mainCards grid lg:grid-cols-6 lg:grid-rows-2 grid-cols-3 grid-rows-3 gap-y-2 justify-items-center  rounded-xl bg-transparent">
         {cards.map((card, index) => (
           <Card
             key={index}
