@@ -1,12 +1,37 @@
-.app{
-  background-image: url("../image/background.jpg");
-  position: absolute;
+@media (max-width: 768px) {
+  html,
+  body {
+    /* height: 100%; */
+    background-image: url("../image/peakpx.jpg");
+    /* background-size: cover; */
+    background-position: center;
+    z-index: -1;
+  }
+}
+.app {
+  /* background-image: url("../public/image/peakpx.jpg"); */
+  /* position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 120%;
+  height: 100%;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  z-index: -1;
+  background-position: center; */
+  /* background-attachment: fixed; */
+  /* z-index: -1; */
+}
+
+@media (min-width: 768px) {
+  .app {
+    background-image: url("../image/background.jpg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+  }
 }
